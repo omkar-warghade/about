@@ -1,271 +1,418 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Omkar Warghade — Backend Developer</title>
-<meta name="description" content="Omkar Warghade — Backend Developer / SDE. Java, Spring Boot, Microservices, Cloud.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><text y=%2220%22 font-size=%2222%22>👨‍💻</text></svg>">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Omkar Warghade — Senior Software Engineer</title>
+<meta name="description" content="Omkar Warghade — Senior Software Engineer specializing in Java, Spring Boot, Microservices and AI-Augmented Engineering." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Product+Sans&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Roboto:wght@300;400;500;700;900&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="data:,">
 </head>
 <body>
 
-<!-- Top nav, Google-style -->
-<header class="topbar">
+<!-- ============ TOP NAV ============ -->
+<header class="topbar" id="topbar">
   <div class="topbar-inner">
-    <a href="#top" class="brand">OW</a>
-    <nav class="toplinks">
+    <a href="#home" class="brand" aria-label="Omkar Warghade — home">
+      <span class="b1">O</span><span class="b2">m</span><span class="b3">k</span><span class="b4">a</span><span class="b1">r</span><span class="b-space"> </span><span class="b2">W</span><span class="b3">.</span>
+    </a>
+    <nav class="nav-links" id="navLinks">
       <a href="#about">About</a>
       <a href="#experience">Experience</a>
       <a href="#skills">Skills</a>
-      <a href="#projects">Highlights</a>
-      <a href="#contact">Contact</a>
+      <a href="#projects">Projects</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#education">Education</a>
+      <a href="assets/Omkar_Warghade_Resume.pdf" download>Resume</a>
+      <a href="#contact" class="nav-cta">Contact</a>
     </nav>
-    <a class="resume-btn" href="resume.pdf" id="resumeBtn" target="_blank" rel="noopener">Résumé</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
 
-<!-- Hero: Google homepage style -->
-<section id="top" class="hero">
+<!-- ============ HERO — Google homepage inspired ============ -->
+<section class="hero" id="home">
   <div class="hero-inner">
-    <h1 class="wordmark" aria-label="Omkar Warghade">
-      <span class="c1">O</span><span class="c2">m</span><span class="c3">k</span><span class="c1">a</span><span class="c4">r</span>
-      <span class="wm-space"></span>
-      <span class="c2">W</span><span class="c3">a</span><span class="c1">r</span><span class="c4">g</span><span class="c2">h</span><span class="c3">a</span><span class="c1">d</span><span class="c4">e</span>
-    </h1>
-    <p class="tagline">Backend Developer / SDE — Java · Spring Boot · Microservices · Cloud</p>
+    <div class="hero-logo-row">
+      <h1 class="hero-wordmark">
+        <span class="b1">O</span><span class="b2">m</span><span class="b3">k</span><span class="b4">a</span><span class="b1">r</span>&nbsp;<span class="b2">W</span><span class="b3">a</span><span class="b4">r</span><span class="b1">g</span><span class="b2">h</span><span class="b3">a</span><span class="b4">d</span><span class="b1">e</span>
+      </h1>
+    </div>
 
-    <div class="searchwrap">
-      <div class="searchbar" id="searchbar">
-        <svg class="search-icon" viewBox="0 0 24 24" width="20" height="20"><path fill="#9aa0a6" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
-        <input type="text" id="searchInput" placeholder="Search this portfolio — try “Spring Boot”, “Mastercard”, “certifications”…" autocomplete="off">
+    <div class="search-shell">
+      <div class="search-bar" id="searchBar">
+        <svg class="search-icon" viewBox="0 0 24 24" width="20" height="20"><path fill="#9aa0a6" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14z"/></svg>
+        <span class="search-text" id="searchText"></span><span class="caret">|</span>
+        <svg class="mic-icon" viewBox="0 0 24 24" width="20" height="20"><path fill="#4285f4" d="M12 15a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3z"/><path fill="#ea4335" d="M17 11a1 1 0 1 0-2 0 3 3 0 0 1-6 0 1 1 0 1 0-2 0 5 5 0 0 0 4 4.9V18h-2a1 1 0 1 0 0 2h6a1 1 0 1 0 0-2h-2v-2.1A5 5 0 0 0 17 11z"/></svg>
       </div>
-      <ul class="suggestions" id="suggestions" hidden></ul>
-      <div class="searchbtns">
-        <button class="gbtn" id="searchGoBtn">Search Portfolio</button>
-        <button class="gbtn" id="luckyBtn">I'm Feeling Lucky</button>
+      <div class="hero-buttons">
+        <a href="#experience" class="g-btn">View Experience</a>
+        <a href="#contact" class="g-btn">Get In Touch</a>
+        <a href="assets/Omkar_Warghade_Resume.pdf" class="g-btn" download>Download Resume</a>
       </div>
     </div>
 
-    <p class="hero-meta">Pune, Maharashtra, India · sid.mangesh@gmail.com · +91 8668757860</p>
+    <p class="hero-tagline">Senior Software Engineer &nbsp;•&nbsp; Java &amp; Spring Boot &nbsp;•&nbsp; AI-Augmented Engineering</p>
   </div>
-  <div class="scroll-cue" aria-hidden="true">
-    <svg viewBox="0 0 24 24" width="24" height="24"><path fill="#5f6368" d="M12 16.5 4.5 9l1.4-1.4L12 13.7l6.1-6.1L19.5 9z"/></svg>
+  <button class="scroll-cue" id="scrollCue" aria-label="Scroll down">
+    <svg viewBox="0 0 24 24" width="24" height="24"><path fill="#5f6368" d="M7 10l5 5 5-5z"/></svg>
+  </button>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="section about" id="about">
+  <div class="container about-grid">
+    <div class="about-photo-wrap">
+      <div class="photo-ring">
+        <img src="assets/omkar-photo.jpg" alt="Portrait of Omkar Warghade" class="about-photo" />
+      </div>
+    </div>
+    <div class="about-copy">
+      <p class="eyebrow"><span class="dot dot-blue"></span>About</p>
+      <h2>Backend engineering, built for scale — accelerated by AI.</h2>
+      <p class="about-text">
+        Senior Backend Engineer with 6+ years building scalable, high-availability systems across Banking, FinTech, Healthcare, and E-commerce. Deep expertise in Java 17, Spring Boot 3, Microservices, and REST APIs on cloud-native infrastructure, paired with hands-on experience integrating AI into the SDLC using Spring AI, Claude Code, and MCP to raise engineering velocity and code quality.
+      </p>
+      <div class="about-stats">
+        <div class="stat-card">
+          <span class="stat-num c-blue">6+</span>
+          <span class="stat-label">Years of experience</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num c-red">5</span>
+          <span class="stat-label">Companies</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num c-yellow">25%</span>
+          <span class="stat-label">Latency cut at Mastercard</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num c-green">97%</span>
+          <span class="stat-label">Test coverage at TCS</span>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-<main>
+<!-- ============ EXPERIENCE ============ -->
+<section class="section experience" id="experience">
+  <div class="container">
+    <p class="eyebrow"><span class="dot dot-red"></span>Experience</p>
+    <h2 class="section-title">Where I've built things</h2>
 
-  <!-- About -->
-  <section id="about" class="block">
-    <div class="block-inner">
-      <p class="eyebrow">About</p>
-      <h2>Building backend systems that hold up under load</h2>
-      <p class="lead">
-        I'm a backend developer with 5.5+ years building scalable, high-performance systems across fintech,
-        e-commerce, and healthcare. I spend most of my time in Java and Spring Boot, designing microservices,
-        trimming latency, and pushing transaction throughput higher — currently at Mastercard, previously at
-        Eshopbox, Wissen Technology, and TCS. I care about clean code and tests that actually catch things:
-        97% coverage across several projects wasn't an accident.
-      </p>
-      <div class="stat-row">
-        <div class="stat"><span class="num c1">5.5+</span><span class="lbl">years experience</span></div>
-        <div class="stat"><span class="num c2">25%</span><span class="lbl">latency reduction, Mastercard</span></div>
-        <div class="stat"><span class="num c3">50%</span><span class="lbl">faster deploys, Eshopbox</span></div>
-        <div class="stat"><span class="num c4">97%</span><span class="lbl">code coverage achieved</span></div>
-      </div>
-    </div>
-  </section>
+    <div class="timeline">
 
-  <!-- Experience -->
-  <section id="experience" class="block alt">
-    <div class="block-inner">
-      <p class="eyebrow">Experience</p>
-      <h2>Where I've worked</h2>
-
-      <article class="card">
-        <div class="card-head">
-          <div>
-            <h3>Software Engineer II · Mastercard</h3>
-            <p class="meta">Pune, MH · January 2024 – Present</p>
+      <article class="job-card">
+        <div class="job-logo"><img src="assets/logos/citi-logo.png" alt="Citi logo" loading="lazy" onerror="this.parentElement.classList.add('logo-fallback'); this.replaceWith(Object.assign(document.createElement('span'),{textContent:'C',className:'logo-letter'}))"></div>
+        <div class="job-body">
+          <div class="job-head">
+            <div>
+              <h3>Citicorp Services India Ltd. <span class="job-sub">(Citibank)</span></h3>
+              <p class="job-role">Officer – Application Programmer</p>
+            </div>
+            <span class="job-dates">Feb 2026 – Present</span>
           </div>
-          <span class="dot c1"></span>
-        </div>
-        <ul>
-          <li>Designed, developed, and optimized scalable microservices, enhancing platform reliability.</li>
-          <li>Improved system performance by optimizing database queries, reducing latency by 25%.</li>
-          <li>Collaborated with cross-functional teams to align technical solutions with business goals.</li>
-        </ul>
-        <div class="chiprow">
-          <span class="chip">Spring Boot</span><span class="chip">Java 8/11/17</span><span class="chip">MySQL</span><span class="chip">DB2</span><span class="chip">Hibernate</span><span class="chip">JPA</span><span class="chip">WebFocus</span><span class="chip">JUnit</span>
+          <ul>
+            <li>Migrated automated integration test suites from DB2 to H2, cutting local test execution time and accelerating the developer feedback loop across the team.</li>
+            <li>Improved code health by systematically resolving SonarQube code smells, security vulnerabilities, and technical debt to meet enterprise banking compliance standards.</li>
+            <li>Raised unit test coverage by building comprehensive JUnit and Mockito suites, strengthening release reliability and long-term maintainability.</li>
+            <li>Accelerated delivery by embedding Claude Code and GitHub Copilot into daily workflows for debugging, refactoring, and test generation.</li>
+            <li>Delivered backend features in Java 17, Spring Boot, and Spring AI across Oracle, DB2, and H2 in close collaboration with cross-functional QA and product teams.</li>
+          </ul>
         </div>
       </article>
 
-      <article class="card">
-        <div class="card-head">
-          <div>
-            <h3>Software Development Engineer II · Eshopbox Ecommerce</h3>
-            <p class="meta">Pune, MH · July 2023 – January 2024</p>
+      <article class="job-card">
+        <div class="job-logo"><img src="https://www.google.com/s2/favicons?domain=mastercard.com&sz=128" alt="Mastercard logo" loading="lazy" onerror="this.parentElement.classList.add('logo-fallback'); this.replaceWith(Object.assign(document.createElement('span'),{textContent:'M',className:'logo-letter'}))"></div>
+        <div class="job-body">
+          <div class="job-head">
+            <div>
+              <h3>Mastercard</h3>
+              <p class="job-role">Software Engineer II</p>
+            </div>
+            <span class="job-dates">Jan 2024 – Jan 2026</span>
           </div>
-          <span class="dot c2"></span>
-        </div>
-        <ul>
-          <li>Owned payment system architecture and development of new payment features.</li>
-          <li>Achieved a 50% reduction in deployment time through CI/CD pipeline optimization.</li>
-        </ul>
-        <div class="chiprow">
-          <span class="chip">GCP</span><span class="chip">Spring Boot</span><span class="chip">Google App Engine</span><span class="chip">Java 8/11</span><span class="chip">MySQL</span><span class="chip">JPA</span><span class="chip">Linux</span>
+          <ul>
+            <li>Reduced API response latency by 25% through targeted database query optimization and backend processing improvements on high-throughput payment services.</li>
+            <li>Authored microservice architecture and workflow diagrams that became the team's reference documentation, improving onboarding and cross-team system understanding.</li>
+            <li>Resolved production defects under time pressure, improving platform stability and end-user experience for mission-critical payment flows.</li>
+            <li>Adopted AI coding assistants (Claude Opus, Claude Sonnet, Google Gemini) to speed up development and elevate code quality.</li>
+            <li>Partnered with engineering and product stakeholders to ship scalable backend services on an Agile cadence.</li>
+          </ul>
         </div>
       </article>
 
-      <article class="card">
-        <div class="card-head">
-          <div>
-            <h3>Software Engineer · Wissen Technology</h3>
-            <p class="meta">Bangalore, KA · May 2022 – July 2023</p>
+      <article class="job-card">
+        <div class="job-logo"><img src="https://www.google.com/s2/favicons?domain=eshopbox.com&sz=128" alt="Eshopbox logo" loading="lazy" onerror="this.parentElement.classList.add('logo-fallback'); this.replaceWith(Object.assign(document.createElement('span'),{textContent:'E',className:'logo-letter'}))"></div>
+        <div class="job-body">
+          <div class="job-head">
+            <div>
+              <h3>Eshopbox</h3>
+              <p class="job-role">SDE II</p>
+            </div>
+            <span class="job-dates">Jul 2023 – Jan 2024</span>
           </div>
-          <span class="dot c3"></span>
-        </div>
-        <ul>
-          <li>Led modernization of legacy systems, migrating services to Java 11 and modern toolchains.</li>
-          <li>Improved system scalability by 30% through microservices refactoring.</li>
-        </ul>
-        <div class="chiprow">
-          <span class="chip">Java 8/11</span><span class="chip">JUnit</span><span class="chip">JDBC</span><span class="chip">Perl</span><span class="chip">HTML</span><span class="chip">CSS</span>
+          <ul>
+            <li>Owned design and delivery of key enhancements to the enterprise payment platform, shipping scalable and maintainable backend solutions.</li>
+            <li>Built BigQuery synchronization that materially reduced database costs and operational overhead while improving backup efficiency.</li>
+            <li>Developed high-volume data sync workflows on GCP and Google App Engine to support enterprise payment processing at scale.</li>
+            <li>Integrated the Zoho Chatbot into the payment platform, improving customer engagement and support automation.</li>
+          </ul>
         </div>
       </article>
 
-      <article class="card">
-        <div class="card-head">
-          <div>
-            <h3>System Engineer · Tata Consultancy Services</h3>
-            <p class="meta">Pune, MH · August 2020 – May 2022 · Client: Cardinal Health</p>
+      <article class="job-card">
+        <div class="job-logo"><img src="https://www.google.com/s2/favicons?domain=wissen.com&sz=128" alt="Wissen Technology logo" loading="lazy" onerror="this.parentElement.classList.add('logo-fallback'); this.replaceWith(Object.assign(document.createElement('span'),{textContent:'W',className:'logo-letter'}))"></div>
+        <div class="job-body">
+          <div class="job-head">
+            <div>
+              <h3>Wissen Technology <span class="job-sub">(Morgan Stanley)</span></h3>
+              <p class="job-role">Software Engineer</p>
+            </div>
+            <span class="job-dates">May 2022 – Jul 2023</span>
           </div>
-          <span class="dot c4"></span>
-        </div>
-        <ul>
-          <li>Developed RESTful microservices for inventories, logistics, and reporting.</li>
-          <li>Increased application performance by 15% via database query optimization.</li>
-        </ul>
-        <div class="chiprow">
-          <span class="chip">Spring Boot</span><span class="chip">Java 8/11</span><span class="chip">ReactJS</span><span class="chip">Hibernate</span><span class="chip">JPA</span>
+          <ul>
+            <li>Modernized legacy Java applications by migrating and refactoring codebases into maintainable, scalable services.</li>
+            <li>Built comprehensive unit test suites for legacy modules, materially improving code quality and reliability.</li>
+            <li>Designed and maintained multiple RESTful APIs following clean architecture and industry best practices.</li>
+            <li>Collaborated with stakeholders under Agile methodologies to deliver high-quality backend services.</li>
+          </ul>
         </div>
       </article>
-    </div>
-  </section>
 
-  <!-- Skills -->
-  <section id="skills" class="block">
-    <div class="block-inner">
-      <p class="eyebrow">Skills</p>
-      <h2>What I work with</h2>
-      <div class="skillgrid">
-        <div class="skillgroup">
-          <h4><span class="dot c1"></span>Languages</h4>
-          <div class="chiprow"><span class="chip">Java 8</span><span class="chip">Java 11</span><span class="chip">Java 17</span></div>
-        </div>
-        <div class="skillgroup">
-          <h4><span class="dot c2"></span>Frameworks</h4>
-          <div class="chiprow"><span class="chip">Spring Boot 2/3</span><span class="chip">JPA</span><span class="chip">Hibernate</span><span class="chip">JUnit</span><span class="chip">PowerMockito</span></div>
-        </div>
-        <div class="skillgroup">
-          <h4><span class="dot c3"></span>Cloud &amp; DevOps</h4>
-          <div class="chiprow"><span class="chip">Google Cloud (GCP)</span><span class="chip">PCF</span><span class="chip">Jenkins</span><span class="chip">GitLab CI</span></div>
-        </div>
-        <div class="skillgroup">
-          <h4><span class="dot c4"></span>Databases</h4>
-          <div class="chiprow"><span class="chip">MySQL</span><span class="chip">PostgreSQL</span><span class="chip">DB2</span><span class="chip">Oracle DB</span></div>
-        </div>
-        <div class="skillgroup">
-          <h4><span class="dot c1"></span>APIs &amp; Practices</h4>
-          <div class="chiprow"><span class="chip">RESTful API Design</span><span class="chip">Agile/Scrum</span><span class="chip">Clean Code</span><span class="chip">TDD</span></div>
-        </div>
-        <div class="skillgroup">
-          <h4><span class="dot c2"></span>Tools</h4>
-          <div class="chiprow"><span class="chip">Linux</span><span class="chip">ReactJS (Beginner)</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Highlights: certifications, accomplishments, education, publications -->
-  <section id="projects" class="block alt">
-    <div class="block-inner">
-      <p class="eyebrow">Highlights</p>
-      <h2>Certifications, accomplishments &amp; more</h2>
-
-      <div class="highlight-grid">
-        <div class="hcard">
-          <h4><span class="dot c1"></span>Certifications</h4>
-          <ul class="plain">
-            <li>Microservices Software Architect — Edureka (Mar 2024)</li>
-            <li>Prompt Engineering (ChatGPT, Copilot, Google Bard) — Udemy (Apr 2024)</li>
-            <li>Designing RESTful Services in Java — LinkedIn Learning (Feb 2024)</li>
-            <li>Ultimate Java Development — Eduonix (Jun 2023)</li>
-            <li>Java 8 New Features — Udemy (Jan 2023)</li>
-            <li>Database Design and MySQL — Udemy (Sept 2022)</li>
+      <article class="job-card">
+        <div class="job-logo"><img src="assets/logos/tcs-logo.png" alt="TCS logo" loading="lazy" onerror="this.parentElement.classList.add('logo-fallback'); this.replaceWith(Object.assign(document.createElement('span'),{textContent:'T',className:'logo-letter'}))"></div>
+        <div class="job-body">
+          <div class="job-head">
+            <div>
+              <h3>Tata Consultancy Services <span class="job-sub">(Client: Cardinal Health)</span></h3>
+              <p class="job-role">System Engineer</p>
+            </div>
+            <span class="job-dates">Aug 2020 – May 2022</span>
+          </div>
+          <ul>
+            <li>Designed scalable RESTful APIs for Cardinal Health supporting inventory management, logistics, and core healthcare business processes.</li>
+            <li>Achieved 97% unit test coverage using JUnit-based automated test suites, ensuring high code quality and reliability.</li>
+            <li>Integrated RabbitMQ and webhook-based messaging to enable asynchronous processing and seamless external system integration.</li>
+            <li>Collaborated with business analysts and QA engineers to deliver enterprise applications under Agile methodologies.</li>
           </ul>
         </div>
+      </article>
 
-        <div class="hcard">
-          <h4><span class="dot c2"></span>Accomplishments</h4>
-          <ul class="plain">
-            <li>97% code coverage across multiple projects, following Clean Code principles.</li>
-            <li>Reduced latency by 25% and improved throughput by 20% at Mastercard.</li>
-            <li>Reduced deployment time by 50% via CI/CD pipeline setup at Eshopbox.</li>
-            <li>Improved system scalability by 30% after legacy migration at Wissen.</li>
-            <li>Freelanced for CheckN.io (US client), delivering backend solutions.</li>
-            <li>Winner, Smart India Hackathon 2020 (Software Edition).</li>
-          </ul>
-        </div>
-
-        <div class="hcard">
-          <h4><span class="dot c3"></span>Education</h4>
-          <ul class="plain">
-            <li>B.E., Information Technology — SPPU, Pune (Aug 2016 – May 2020)</li>
-            <li>JSPM's Rajarshi Shahu College of Engineering, Pune · CGPA 8.17/10</li>
-          </ul>
-          <h4 class="mt"><span class="dot c3"></span>Publications</h4>
-          <ul class="plain">
-            <li>IJERT: "Cloud-based Secure Multi-Owner Hospital Management System"</li>
-            <li>Built an event registration platform to digitize college event management.</li>
-          </ul>
-        </div>
-
-        <div class="hcard">
-          <h4><span class="dot c4"></span>Volunteering</h4>
-          <ul class="plain">
-            <li>Mentor for coding bootcamps and interview prep workshops.</li>
-            <li>Volunteer Java Developer, Mastercard's Unlocked Program.</li>
-          </ul>
-          <h4 class="mt"><span class="dot c4"></span>Languages &amp; Hobbies</h4>
-          <p class="dim">English (Intermediate), Hindi (Fluent), Marathi (Native)</p>
-          <p class="dim">Tech events, cricket, table tennis, chess, reading tech blogs and sci-fi.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<!-- Footer, Google-style -->
-<footer id="contact" class="footer">
-  <div class="footer-top">
-    <span>Pune, Maharashtra, India</span>
-  </div>
-  <div class="footer-bottom">
-    <div class="footer-links">
-      <a href="mailto:sid.mangesh@gmail.com">Email</a>
-      <a href="tel:+918668757860">Phone</a>
-      <a href="https://linkedin.com/in/omkrw" target="_blank" rel="noopener">LinkedIn</a>
-    </div>
-    <div class="footer-links">
-      <a href="#top">Back to top</a>
     </div>
   </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section class="section skills" id="skills">
+  <div class="container">
+    <p class="eyebrow"><span class="dot dot-yellow"></span>Skills</p>
+    <h2 class="section-title">Core toolkit</h2>
+
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3>Languages</h3>
+        <div class="chips">
+          <span class="chip chip-blue">Java 8</span><span class="chip chip-red">Java 11</span><span class="chip chip-yellow">Java 17</span><span class="chip chip-green">Java 21</span><span class="chip chip-blue">SQL</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>Frameworks</h3>
+        <div class="chips">
+          <span class="chip chip-red">Spring Boot</span><span class="chip chip-yellow">Spring AI</span><span class="chip chip-green">Hibernate</span><span class="chip chip-blue">JPA</span><span class="chip chip-red">Microservices</span><span class="chip chip-yellow">REST APIs</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>Cloud &amp; DevOps</h3>
+        <div class="chips">
+          <span class="chip chip-green">GCP</span><span class="chip chip-blue">PCF</span><span class="chip chip-red">Docker</span><span class="chip chip-yellow">Jenkins</span><span class="chip chip-green">GitLab CI</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>Databases</h3>
+        <div class="chips">
+          <span class="chip chip-blue">Oracle</span><span class="chip chip-red">MySQL</span><span class="chip chip-yellow">PostgreSQL</span><span class="chip chip-green">DB2</span><span class="chip chip-blue">H2</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>AI Engineering</h3>
+        <div class="chips">
+          <span class="chip chip-red">Claude</span><span class="chip chip-yellow">Claude Code</span><span class="chip chip-green">MCP</span><span class="chip chip-blue">GitHub Copilot</span><span class="chip chip-red">RAG</span><span class="chip chip-yellow">pgvector</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>Testing &amp; Quality</h3>
+        <div class="chips">
+          <span class="chip chip-green">JUnit</span><span class="chip chip-blue">Mockito</span><span class="chip chip-red">SonarQube</span><span class="chip chip-yellow">TDD</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section class="section projects" id="projects">
+  <div class="container">
+    <p class="eyebrow"><span class="dot dot-green"></span>Projects</p>
+    <h2 class="section-title">Flagship AI projects</h2>
+
+    <div class="project-grid">
+      <div class="project-card">
+        <div class="project-bar bar-blue"></div>
+        <h3>Enterprise Confluence AI Assistant</h3>
+        <p>Built a RAG-powered enterprise knowledge assistant using Spring AI, Claude, MCP, pgvector, and Confluence APIs to surface institutional knowledge on demand.</p>
+        <div class="tag-row"><span class="tag">Spring AI</span><span class="tag">Claude</span><span class="tag">MCP</span><span class="tag">pgvector</span></div>
+      </div>
+      <div class="project-card">
+        <div class="project-bar bar-red"></div>
+        <h3>AI Code Review Platform</h3>
+        <p>Integrated GitHub APIs with Claude Code to automate code review, flag security vulnerabilities, and generate unit-test recommendations.</p>
+        <div class="tag-row"><span class="tag">GitHub API</span><span class="tag">Claude Code</span><span class="tag">Automation</span></div>
+      </div>
+      <div class="project-card">
+        <div class="project-bar bar-yellow"></div>
+        <h3>Production Log Analyzer</h3>
+        <p>Built an AI-driven platform using Spring AI and Claude to parse production logs, identify root causes, summarize stack traces, and recommend fixes.</p>
+        <div class="tag-row"><span class="tag">Spring AI</span><span class="tag">Claude</span><span class="tag">Observability</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CERTIFICATIONS ============ -->
+<section class="section certifications" id="certifications">
+  <div class="container">
+    <p class="eyebrow"><span class="dot dot-blue"></span>Certifications</p>
+    <h2 class="section-title">Verified learning</h2>
+
+    <div class="cert-grid">
+
+      <a class="cert-card" href="https://verify.skilljar.com/c/qem6u7it82kb" target="_blank" rel="noopener">
+        <div class="cert-logo"><img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=128" alt="Anthropic logo" loading="lazy" onerror="this.parentElement.classList.add('logo-fallback'); this.replaceWith(Object.assign(document.createElement('span'),{textContent:'A',className:'logo-letter'}))"></div>
+        <div class="cert-body">
+          <h3>Claude 101</h3>
+          <p>Anthropic</p>
+        </div>
+        <span class="cert-verify">Verify ↗</span>
+      </a>
+
+      <a class="cert-card" href="https://verify.skilljar.com/c/b6onjfjqbne3" target="_blank" rel="noopener">
+        <div class="cert-logo"><img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=128" alt="Anthropic logo" loading="lazy" onerror="this.parentElement.classList.add('logo-fallback'); this.replaceWith(Object.assign(document.createElement('span'),{textContent:'A',className:'logo-letter'}))"></div>
+        <div class="cert-body">
+          <h3>Claude Code 101</h3>
+          <p>Anthropic</p>
+        </div>
+        <span class="cert-verify">Verify ↗</span>
+      </a>
+
+      <a class="cert-card" href="https://verify.skilljar.com/c/s7mvhmy4hryq" target="_blank" rel="noopener">
+        <div class="cert-logo"><img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=128" alt="Anthropic logo" loading="lazy" onerror="this.parentElement.classList.add('logo-fallback'); this.replaceWith(Object.assign(document.createElement('span'),{textContent:'A',className:'logo-letter'}))"></div>
+        <div class="cert-body">
+          <h3>Claude Code in Action</h3>
+          <p>Anthropic</p>
+        </div>
+        <span class="cert-verify">Verify ↗</span>
+      </a>
+
+      <a class="cert-card" href="https://verify.skilljar.com/c/5mzg945ybke6" target="_blank" rel="noopener">
+        <div class="cert-logo"><img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=128" alt="Anthropic logo" loading="lazy" onerror="this.parentElement.classList.add('logo-fallback'); this.replaceWith(Object.assign(document.createElement('span'),{textContent:'A',className:'logo-letter'}))"></div>
+        <div class="cert-body">
+          <h3>Introduction to MCP</h3>
+          <p>Anthropic</p>
+        </div>
+        <span class="cert-verify">Verify ↗</span>
+      </a>
+
+      <a class="cert-card" href="https://www.edureka.co/my-certificate/337881a7392caca635fda3ce938eb5e9" target="_blank" rel="noopener">
+        <div class="cert-logo"><img src="https://www.google.com/s2/favicons?domain=edureka.co&sz=128" alt="Edureka logo" loading="lazy" onerror="this.parentElement.classList.add('logo-fallback'); this.replaceWith(Object.assign(document.createElement('span'),{textContent:'E',className:'logo-letter'}))"></div>
+        <div class="cert-body">
+          <h3>Microservices Software Architect</h3>
+          <p>Edureka</p>
+        </div>
+        <span class="cert-verify">Verify ↗</span>
+      </a>
+
+      <div class="cert-card cert-static">
+        <div class="cert-logo cert-logo-dual">
+          <img src="https://www.google.com/s2/favicons?domain=microsoft.com&sz=128" alt="Microsoft logo" loading="lazy" onerror="this.remove()">
+          <img src="https://www.google.com/s2/favicons?domain=linkedin.com&sz=128" alt="LinkedIn logo" loading="lazy" onerror="this.remove()">
+        </div>
+        <div class="cert-body">
+          <h3>Microsoft Copilot for Productivity</h3>
+          <p>Microsoft &amp; LinkedIn Learning</p>
+        </div>
+      </div>
+
+      <div class="cert-card cert-static">
+        <div class="cert-logo"><img src="https://www.google.com/s2/favicons?domain=jetbrains.com&sz=128" alt="JetBrains logo" loading="lazy" onerror="this.parentElement.classList.add('logo-fallback'); this.replaceWith(Object.assign(document.createElement('span'),{textContent:'J',className:'logo-letter'}))"></div>
+        <div class="cert-body">
+          <h3>Java Foundations Professional Certificate</h3>
+          <p>JetBrains</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ EDUCATION ============ -->
+<section class="section education" id="education">
+  <div class="container">
+    <p class="eyebrow"><span class="dot dot-red"></span>Education</p>
+    <h2 class="section-title">Academic background</h2>
+
+    <div class="edu-card">
+      <div class="edu-logo"><img src="https://www.jspmrscoe.edu.in/Images/Logo/RSCOE_logo_latest-removebg-preview.png" alt="JSPM's Rajarshi Shahu College of Engineering logo" loading="lazy" onerror="this.parentElement.classList.add('logo-fallback'); this.replaceWith(Object.assign(document.createElement('span'),{textContent:'R',className:'logo-letter'}))"></div>
+      <div class="edu-body">
+        <h3>Bachelor of Engineering, Information Technology</h3>
+        <p class="edu-college">JSPM's Rajarshi Shahu College of Engineering, Pune, Maharashtra</p>
+        <p class="edu-univ">Savitribai Phule Pune University (SPPU)</p>
+        <div class="edu-meta">
+          <span>Aug 2016 – May 2020</span>
+          <span class="edu-sep">•</span>
+          <span>CGPA: 8.17 / 10</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section contact" id="contact">
+  <div class="container contact-inner">
+    <p class="eyebrow"><span class="dot dot-green"></span>Contact</p>
+    <h2 class="section-title">Let's work together</h2>
+    <p class="contact-sub">Open to senior backend and AI-augmented engineering roles.</p>
+
+    <div class="contact-grid">
+      <a class="contact-card" href="mailto:omkar.mangeshw@gmail.com">
+        <svg viewBox="0 0 24 24" width="22" height="22"><path fill="#4285f4" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5z"/></svg>
+        <span>omkar.mangeshw@gmail.com</span>
+      </a>
+      <a class="contact-card" href="tel:+918668757860">
+        <svg viewBox="0 0 24 24" width="22" height="22"><path fill="#ea4335" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .57 3.6 1 1 0 0 1-.25 1z"/></svg>
+        <span>+91 86687 57860</span>
+      </a>
+      <a class="contact-card" href="https://linkedin.com/in/omkrw" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="22" height="22"><path fill="#34a853" d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zM8.34 18.34V10.1H5.67v8.24zM7 8.9a1.55 1.55 0 1 0 0-3.1 1.55 1.55 0 0 0 0 3.1zm11.34 9.44v-4.53c0-2.43-1.3-3.56-3.03-3.56a2.61 2.61 0 0 0-2.37 1.3v-1.1H10.3c.03.7 0 8.25 0 8.4h2.66v-4.6a1.8 1.8 0 0 1 .09-.65 1.46 1.46 0 0 1 1.37-1c.97 0 1.36.74 1.36 1.82v4.44z"/></svg>
+        <span>linkedin.com/in/omkrw</span>
+      </a>
+      <a class="contact-card" href="#" onclick="return false;">
+        <svg viewBox="0 0 24 24" width="22" height="22"><path fill="#fbbc05" d="M12 2C6.48 2 2 6.58 2 12.15c0 4.44 2.87 8.2 6.84 9.53.5.1.68-.22.68-.48v-1.7c-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 5 0c1.9-1.33 2.75-1.05 2.75-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.94.68 1.9v2.82c0 .27.18.59.69.48A10.16 10.16 0 0 0 22 12.15C22 6.58 17.52 2 12 2z"/></svg>
+        <span>Pune, Maharashtra, India</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>© <span id="year"></span> Omkar Warghade. Built with care, one commit at a time.</p>
 </footer>
 
 <script src="script.js"></script>
