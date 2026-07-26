@@ -54,7 +54,12 @@ function typeLoop() {
 }
 
 if (prefersReducedMotion) {
+  let i = 0;
   searchText.textContent = phrases[0];
+  setInterval(() => {
+    i = (i + 1) % phrases.length;
+    searchText.textContent = phrases[i];
+  }, 2200);
 } else {
   typeLoop();
 }
